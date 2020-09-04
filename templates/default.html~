@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <title>{% if page.title %}{{ page.title }} &mdash; {% endif %}{{ site.title }} &mdash; {{ site.tagline }}</title>
+
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name=viewport content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
+  <meta name="description" content="{{ site.description }}">
+  <meta name="google-site-verification" content="q5KncOje-dNdD5uxqSOG1znSAo5Wsz5MlBcAmteQAJA" />
+
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600" rel="stylesheet">
+
+  <link href="https://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
+  <link href="{{ site.baseUrl }}main.css" rel="stylesheet" type="text/css">
+
+  <!-- FID polyfill -->
+  <script>
+  !function(n,e){var t,o,i,c=[],f={passive:!0,capture:!0},r=new Date,a="pointerup",u="pointercancel";function p(n,c){t||(t=c,o=n,i=new Date,w(e),s())}function s(){o>=0&&o<i-r&&(c.forEach(function(n){n(o,t)}),c=[])}function l(t){if(t.cancelable){var o=(t.timeStamp>1e12?new Date:performance.now())-t.timeStamp;"pointerdown"==t.type?function(t,o){function i(){p(t,o),r()}function c(){r()}function r(){e(a,i,f),e(u,c,f)}n(a,i,f),n(u,c,f)}(o,t):p(o,t)}}function w(n){["click","mousedown","keydown","touchstart","pointerdown"].forEach(function(e){n(e,l,f)})}w(n),self.perfMetrics=self.perfMetrics||{},self.perfMetrics.onFirstInputDelay=function(n){c.push(n),s()}}(addEventListener,removeEventListener);
+</script>
+</head>
+  <body class="Site">
+    <header class="Site-header">
+      <div class="Header Header--cozy" role="banner">
+<div class="Header-titles">
+  <h1 class="Header-title"><a href="{{ site.baseUrl }}">Solved <i>by</i> Flexbox</a></h1>
+  <h2 class="Header-subTitle">{{ site.tagline }}</h2>
+</div>
+<div class="Header-actions">
+  <a class="Header-button Button Button--action Button--wide"
+     ga-on="click"
+     ga-hit-type="social"
+     ga-social-network="Github"
+     ga-social-action="view-source"
+     ga-social-target="https://github.com/philipwalton/solved-by-flexbox"
+     href="https://github.com/philipwalton/solved-by-flexbox">
+    <span class="icon-github icon-large"></span>&nbsp; View Project Source
+  </a>
+  <a class="Header-button Button Button--wide"
+     ga-on="click"
+     ga-hit-type="social"
+     ga-social-network="Twitter"
+     ga-social-action="tweet"
+     ga-social-target="https://philipwalton.github.io/solved-by-flexbox{{ page.permalink }}"
+     href="https://twitter.com/intent/tweet?text={{ 'A showcase of traditionally hard CSS problems, easily solved using flexbox.' | urlencode }}&url=https://philipwalton.github.io/solved-by-flexbox/&via=philwalton">
+    <span class="icon-twitter icon-large twitter-color"></span>&nbsp; Spread the Word
+  </a>
+</div>
+
+      </div>
+    </header>
+    <main class="Site-content">
+      <div class="Container">
+        <h1>{{ page.title }}</h1>
+        {{ page.content }}
+      </div>
+    </main>
+    <footer class="Site-footer">
+      <div class="Footer">
+        {% include 'footer.html' %}
+      </div>
+    </footer>
+    {% include 'scripts.html' %}
+  </body>
+</html>
